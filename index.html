@@ -47,6 +47,9 @@ a{color:inherit}
 .hero .sub b{font-weight:600;color:var(--ink);border-bottom:1px solid rgba(201,160,99,.5);padding-bottom:2px}
 .hero .lede{max-width:620px;font-size:15px;color:rgba(243,240,234,.72);line-height:2}
 .hero .lede em{font-style:normal;color:var(--gold)}
+.hero .signature{font-family:var(--serif);font-size:clamp(19px,2vw,25px);line-height:1.75;letter-spacing:.05em;
+  color:rgba(243,240,234,.92);margin-bottom:20px}
+.hero .signature em{font-style:normal;color:var(--gold);border-bottom:1px solid rgba(201,160,99,.5)}
 
 .figures{display:flex;margin-top:46px;border-top:1px solid var(--line);
   padding-top:22px;flex-wrap:wrap}
@@ -77,7 +80,7 @@ a{color:inherit}
   filter:grayscale(.45) brightness(.95) contrast(1.02);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
 .card:hover .shot img{transform:scale(1.06);filter:grayscale(.05) brightness(1.02)}
 .shot::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,.02) 24%,rgba(0,0,0,.55) 62%,rgba(6,6,7,.97) 100%)}
+  background:linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,.02) 20%,rgba(0,0,0,.58) 52%,rgba(6,6,7,.94) 74%,#060607 100%)}
 .tag{position:absolute;left:16px;top:16px;z-index:3;font-size:9.5px;letter-spacing:.18em;
   color:rgba(243,240,234,.8);border-left:2px solid var(--gold);padding:2px 0 2px 8px;line-height:1.5}
 .tag.live{border-color:#7ec8a2}
@@ -110,6 +113,31 @@ a{color:inherit}
 .pills{display:flex;flex-wrap:wrap;gap:10px}
 .pills span{font-size:11.5px;letter-spacing:.1em;color:rgba(243,240,234,.62);
   border:1px solid var(--line);padding:7px 15px;line-height:1.4}
+
+/* ============ 平台条 ============ */
+.platforms{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 30px;margin-top:26px;
+  border-top:1px solid var(--line);padding-top:22px}
+.platforms .lb{font-size:10.5px;letter-spacing:.22em;color:var(--faint)}
+.platforms span{font-size:12px;letter-spacing:.16em;color:rgba(243,240,234,.52)}
+
+/* ============ 代表作 ============ */
+.reel-wrap{border:1px solid var(--line);background:#000}
+.reel-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.reel-meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:14px 28px;margin-top:20px;
+  border-top:1px solid var(--line);padding-top:18px}
+.reel-meta b{font-family:var(--serif);font-size:16.5px;font-weight:700;letter-spacing:.04em}
+.reel-meta span{font-size:12.5px;color:var(--dim);max-width:660px;line-height:1.8}
+.reel-meta a{font-size:11.5px;letter-spacing:.16em;color:var(--gold);text-decoration:none}
+
+/* ============ 关于 ============ */
+.about{display:grid;grid-template-columns:.88fr 1.12fr;gap:64px;align-items:start}
+.about .quote{font-family:var(--serif);font-size:clamp(21px,2.3vw,30px);line-height:1.7;letter-spacing:.05em;
+  color:rgba(243,240,234,.94)}
+.about .quote em{font-style:normal;color:var(--gold)}
+.about .qsub{font-size:12px;letter-spacing:.16em;color:var(--faint);margin-top:18px}
+.about p{font-size:14.5px;color:rgba(243,240,234,.76);line-height:2.05;margin-bottom:22px}
+.about p b{color:var(--ink);font-weight:600}
 
 /* ============ 画皮 ============ */
 .huapi{background:#0c0b09;border-top:1px solid rgba(201,160,99,.22);border-bottom:1px solid rgba(201,160,99,.22)}
@@ -222,6 +250,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
   .huapi-in{grid-template-columns:1fr;padding:72px 22px;gap:40px}
   .huapi-poster{max-width:220px}
   .mats{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:34px}
   .flow-wrap{grid-template-columns:1fr 1fr}
   .step{border-bottom:1px solid var(--line)}
   .contact{padding:72px 22px 90px}
@@ -253,9 +282,9 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
   <div class="mk">Portfolio · 2026</div>
   <nav>
     <a href="#works">作品</a>
-    <a href="#huapi">画皮·情灭</a>
+    <a href="#reel">代表作</a>
+    <a href="#about">关于</a>
     <a href="#cap">能力</a>
-    <a href="#flow">流程</a>
     <a href="#plate">片单</a>
     <a href="#contact">联系</a>
   </nav>
@@ -268,6 +297,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
     <div class="kicker">Trailer Editor · Beijing</div>
     <h1>卢雪菲</h1>
     <div class="sub">预告片剪辑　|　<b>电影与剧集宣发物料</b></div>
+    <div class="signature">把两小时的片子，剪成让人<em>非点不可</em>的一分半。</div>
     <div class="lede">
       5 年影视后期剪辑，主攻院线电影与剧集的<em>预告片、特辑与节点物料</em>。
       单条预告 5 个工作日出首版、平均 2 版定稿，<em>5 年零延期交付</em>；
@@ -293,6 +323,49 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
   <div class="works-foot">
     <p>以上为平台官方发布页，可逐条点开核对；其余项目见下方片单与网盘归档。</p>
     <div class="tips">封面均为项目官方物料图</div>
+  </div>
+  <div class="platforms">
+    <div class="lb">物料上线过的平台</div>
+    <span>腾讯视频</span><span>哔哩哔哩</span><span>爱奇艺</span><span>优酷</span>
+    <span>抖音</span><span>微博</span><span>视频号</span>
+  </div>
+</section>
+
+<!-- ===== 代表作 ===== -->
+<section class="sect" id="reel">
+  <div class="sect-head">
+    <div class="left"><span class="num">02</span><h2>代表作 · 点开就能看</h2></div>
+    <div class="side">不想看海报，就直接看片子<br>1 分 17 秒，够判断手感</div>
+  </div>
+  <div class="reel-wrap">
+    <div class="reel-frame">
+      <iframe src="https://player.bilibili.com/player.html?aid=298897335&autoplay=0&high_quality=1&danmaku=0"
+        allowfullscreen scrolling="no" title="《青面修罗》终极预告"></iframe>
+    </div>
+    <div class="reel-meta">
+      <b>《青面修罗》终极预告</b>
+      <span>结构脚本、剪辑、画面包装、混音字幕由我完成；腾讯电影官方账号发布的终极预告，全网上线片。</span>
+      <a href="https://www.bilibili.com/video/av298897335" target="_blank" rel="noopener">播放器打不开？去 B 站 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于 ===== -->
+<section class="sect" id="about">
+  <div class="sect-head">
+    <div class="left"><span class="num">03</span><h2>关于我</h2></div>
+    <div class="side">非科班转行 · 一个人收口一整批物料</div>
+  </div>
+  <div class="about">
+    <div>
+      <div class="quote">“预告片不是把好镜头<em>拼起来</em>，<br>是先回答：观众<em>凭什么点开</em>。”</div>
+      <div class="qsub">卢雪菲 · 预告片剪辑 · 北京</div>
+    </div>
+    <div>
+      <p><b>从行政转过来的。</b>2017 到 2021 我在三家公司做行政与人事，2021 年才正式转进后期。第一站是捷成华视网聚，从进口片汉化、物料规格适配这些细活做起，两年后独立对接片方与发行方，2024 年进北京世纪捷成电影科技，31 个月交付 200+ 条成片。</p>
+      <p><b>我的做法。</b>先把整片过一遍，再定结构脚本：这条片子对谁说话、观众凭什么点开、哪三秒必须留住人。结构定了才动剪刀，包装、字幕、混音默认一起收口，片方拿到就能直接上，不用再找人补。</p>
+      <p><b>我的边界。</b>不替片方改调性，只把节奏、信息和情绪做到位；交付前自己先看三遍，改稿 2–3 天一轮，五个工作日交首版。上面七条片子，基本都是一个项目里我一个人从头做到尾。</p>
+    </div>
   </div>
 </section>
 
@@ -326,7 +399,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 <!-- ===== 能力 ===== -->
 <section class="sect" id="cap">
   <div class="sect-head">
-    <div class="left"><span class="num">03</span><h2>我能交付什么</h2></div>
+    <div class="left"><span class="num">04</span><h2>我能交付什么</h2></div>
     <div class="side">一条片子从素材到多平台成片，一个人收口</div>
   </div>
   <div class="cap4">
@@ -356,7 +429,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 <!-- ===== 流程 ===== -->
 <section class="sect" id="flow">
   <div class="sect-head">
-    <div class="left"><span class="num">04</span><h2>一条预告的交付流程</h2></div>
+    <div class="left"><span class="num">05</span><h2>一条预告的交付流程</h2></div>
     <div class="side">标准 7–8 个工作日收口</div>
   </div>
   <div class="flow-wrap">
@@ -376,7 +449,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 <!-- ===== 片单 / 履历 ===== -->
 <section class="sect" id="plate">
   <div class="sect-head">
-    <div class="left"><span class="num">05</span><h2>片单与履历</h2></div>
+    <div class="left"><span class="num">06</span><h2>片单与履历</h2></div>
     <div class="side">2021.06 起做影视后期剪辑 · 北京</div>
   </div>
   <div class="plate">
@@ -439,31 +512,31 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 */
 const WORKS = [
   { title:'《青面修罗》', tag:'B站 · 站内可播', live:true,
-    desc:'终极预告，腾讯电影官方账号发布，网站内直接播放。',
+    desc:'我做的：结构脚本、剪辑、画面包装、混音字幕。腾讯电影官方账号发布的终极预告。',
     type:'bili', aid:'298897335', poster:'assets/qingmian.jpg' },
 
   { title:'《再见，朱莉娅》', tag:'腾讯视频 · 预告页', live:false,
-    desc:'院线预告（1 分 42 秒），进口片汉化版，可直接在腾讯视频打开核对。',
+    desc:'我做的：院线预告打字幕、做汉化版（1 分 42 秒），可直接在腾讯视频打开核对。',
     type:'link', url:'https://v.qq.com/x/cover/mzc002008bugg1f/b410225vp19.html', poster:'assets/06.jpg' },
 
   { title:'《福尔摩斯小姐：伦敦厄运》', tag:'B站 · 站内可播', live:true,
-    desc:'定档预告，进口片汉化，网站内直接播放。',
+    desc:'我做的：定档预告的汉化与剪辑，B 站可直接播放。',
     type:'bili', aid:'818173137', poster:'assets/fuholmes.jpg' },
 
   { title:'《长安诡事传》', tag:'抖音 · 平台物料', live:false,
-    desc:'上线倒计时物料（克拉拉），平台内可直接观看。',
+    desc:'我做的：上线倒计时物料剪辑（克拉拉），平台内可直接看。',
     type:'link', url:'https://www.iesdouyin.com/share/video/7305618261951941940', poster:'assets/03.jpg' },
 
   { title:'《黄河守墓人》', tag:'优酷 · 定档预告', live:false,
-    desc:'10 月 11 日全网上线前的定档预告，优酷片方账号发布。',
+    desc:'我做的：10 月 11 日全网上线前的定档预告，优酷片方账号发布。',
     type:'link', url:'https://v.youku.com/v_show/id_XNjA1MjM5NTU3Mg==.html', poster:'assets/huanghe.jpg' },
 
   { title:'《画皮：情灭》', tag:'抖音 · 上线物料', live:false,
-    desc:'上线物料，艺人端发布，除预告外物料基本独立完成。',
+    desc:'我做的：除预告外整批物料——制作特辑、演员特辑、幕后花絮、艺人物料。',
     type:'link', url:'https://v.douyin.com/_Bmbwtp1B84/', poster:'assets/05.jpg' },
 
   { title:'《双生神捕之墙头马上》', tag:'爱奇艺 · 短剧预告', live:false,
-    desc:'24 集短剧的开播预告与竖版切片，爱奇艺独播。',
+    desc:'我做的：开播预告与竖版切片，24 集短剧，爱奇艺独播。',
     type:'link', url:'https://www.iqiyi.com/a_hqu4m0f4ap.html', poster:'assets/shuangshen.jpg' }
 ];
 
