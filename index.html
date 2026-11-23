@@ -90,15 +90,14 @@ a{color:inherit}
 .card:hover .cap .desc{max-height:100px;opacity:1;transform:none}
 .cap .go{font-size:10px;letter-spacing:.18em;color:var(--gold);margin-top:10px;opacity:.92}
 
-/* CTA 卡 */
-.cta{border:1px dashed rgba(201,160,99,.4);background:linear-gradient(160deg,#12100c,#0b0b0c);
-  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-  padding:28px;text-decoration:none;transition:background .35s}
-.cta:hover{background:#141109}
-.cta .n{font-family:var(--serif);font-size:30px;font-weight:900;color:var(--gold);margin-bottom:14px}
-.cta h3{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.5;margin-bottom:10px}
-.cta p{font-size:12.5px;color:var(--dim);line-height:1.75;margin-bottom:18px}
-.cta .arrow{font-size:11px;letter-spacing:.18em;color:var(--gold);margin-top:auto}
+/* CTA 卡（更多片子 · 网盘） */
+.cta{position:relative;border:1px solid rgba(201,160,99,.42);background:#0b0b0c;overflow:hidden;
+  display:block;text-decoration:none;transition:border-color .4s,transform .4s}
+.cta:hover{border-color:rgba(201,160,99,.8);transform:translateY(-3px)}
+.cta .shot{aspect-ratio:3/4}
+.cta .shot img{filter:grayscale(.35) brightness(.92)}
+.cta .plus{position:absolute;right:16px;bottom:16px;z-index:4;font-family:var(--serif);font-size:22px;
+  color:var(--gold);line-height:1}
 
 .works-foot{display:flex;justify-content:space-between;align-items:center;margin-top:34px;
   border-top:1px solid var(--line);padding-top:22px;flex-wrap:wrap;gap:14px}
@@ -115,10 +114,20 @@ a{color:inherit}
 /* ============ 画皮 ============ */
 .huapi{background:#0c0b09;border-top:1px solid rgba(201,160,99,.22);border-bottom:1px solid rgba(201,160,99,.22)}
 .huapi-in{max-width:1280px;margin:0 auto;padding:96px 48px;
-  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+  display:grid;grid-template-columns:250px 1fr;gap:60px;align-items:start}
+.huapi-poster{position:relative;border:1px solid rgba(201,160,99,.32)}
+.huapi-poster img{width:100%;display:block}
+.huapi-poster .lbl{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;font-size:10px;letter-spacing:.16em;
+  color:rgba(243,240,234,.72);background:linear-gradient(180deg,transparent,rgba(6,6,7,.9))}
 .huapi-l .kicker{margin-bottom:20px}
-.huapi-l h2{font-family:var(--serif);font-size:clamp(30px,3.4vw,46px);font-weight:900;line-height:1.25;letter-spacing:.04em;margin-bottom:22px}
-.huapi-l .d{font-size:15px;color:rgba(243,240,234,.74);line-height:2;margin-bottom:30px;max-width:480px}
+.huapi-l h2{font-family:var(--serif);font-size:clamp(28px,3.1vw,42px);font-weight:900;line-height:1.25;letter-spacing:.04em;margin-bottom:20px}
+.huapi-l .d{font-size:14.5px;color:rgba(243,240,234,.74);line-height:2;margin-bottom:26px;max-width:620px}
+.mats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:28px}
+.mats .m{background:#0c0b09;padding:20px 22px}
+.mats .m .n{font-family:var(--serif);font-size:11.5px;color:var(--gold);letter-spacing:.14em;margin-bottom:8px}
+.mats .m b{display:block;font-size:14.5px;font-weight:600;letter-spacing:.04em;margin-bottom:5px}
+.mats .m span{font-size:12.5px;color:var(--dim);line-height:1.7}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;font-size:12.5px;letter-spacing:.14em;
   text-decoration:none;border:1px solid rgba(201,160,99,.5);color:var(--gold);transition:.3s}
@@ -211,6 +220,8 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
   .works{grid-template-columns:1fr 1fr;gap:16px}
   .cap .desc{max-height:100px;opacity:1;transform:none}
   .huapi-in{grid-template-columns:1fr;padding:72px 22px;gap:40px}
+  .huapi-poster{max-width:220px}
+  .mats{grid-template-columns:1fr}
   .flow-wrap{grid-template-columns:1fr 1fr}
   .step{border-bottom:1px solid var(--line)}
   .contact{padding:72px 22px 90px}
@@ -288,23 +299,25 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 <!-- ===== 画皮 ===== -->
 <section class="huapi" id="huapi">
   <div class="huapi-in">
+    <div class="huapi-poster">
+      <img src="assets/05.jpg" alt="《画皮：情灭》海报">
+      <div class="lbl">KEY ART · 上线主视觉</div>
+    </div>
     <div class="huapi-l">
       <div class="kicker">Case Study</div>
-      <h2>《画皮：情灭》<br>电影全量宣发物料</h2>
+      <h2>《画皮：情灭》<br>一整批宣发物料，一个人做完</h2>
       <div class="d">
-        该项目除预告片部分外，制作特辑、演员特辑、幕后花絮，以及艺人抖音、微博、视频号的单条内容基本由我一人完成，
-        并完成同一批物料在三个平台的规格适配与节奏调整。
+        这个项目除预告片外，制作特辑、演员特辑、幕后花絮，以及艺人抖音、微博、视频号的单条内容基本由我一人完成，
+        同一批素材再按三个平台各自的规格与节奏重做一遍，艺人端拿到就能直接发。
+      </div>
+      <div class="mats">
+        <div class="m"><div class="n">01</div><b>制作特辑</b><span>幕后制作向，长版与短版两套节奏</span></div>
+        <div class="m"><div class="n">02</div><b>演员特辑</b><span>以主演崔真真为主的角色向特辑</span></div>
+        <div class="m"><div class="n">03</div><b>幕后花絮</b><span>片场花絮切片，配合上线节点分批释出</span></div>
+        <div class="m"><div class="n">04</div><b>艺人物料</b><span>抖音 / 微博 / 视频号单条内容与竖版适配</span></div>
       </div>
       <div class="btns">
         <a class="btn solid" href="https://v.douyin.com/_Bmbwtp1B84/" target="_blank" rel="noopener">抖音 · 上线物料 ↗</a>
-      </div>
-    </div>
-    <div class="huapi-r">
-      <div class="list">
-        <div class="row"><div class="n">01</div><div class="t"><b>制作特辑</b><span>幕后制作向，长版与短版两套节奏</span></div></div>
-        <div class="row"><div class="n">02</div><div class="t"><b>演员特辑</b><span>以主演崔真真为主的角色向特辑</span></div></div>
-        <div class="row"><div class="n">03</div><div class="t"><b>幕后花絮</b><span>片场花絮切片，配合上线节点分批释出</span></div></div>
-        <div class="row"><div class="n">04</div><div class="t"><b>艺人物料</b><span>抖音 / 微博 / 视频号单条内容与竖版适配</span></div></div>
       </div>
     </div>
   </div>
@@ -478,9 +491,16 @@ const cta = document.createElement('a');
 cta.className = 'card cta';
 cta.href = 'https://pan.baidu.com/s/1T1qk3eqYJMgS1CNigBzpZg?pwd=18nm';
 cta.target = '_blank'; cta.rel = 'noopener';
-cta.innerHTML = `<div class="n">+</div><h3>更多片子</h3>
-  <p>院线与网络电影全域物料，含未公开项目的转发版。</p>
-  <div class="arrow">网盘 · 提取码 18nm ↗</div>`;
+cta.innerHTML = `
+  <div class="shot">
+    <img src="assets/more.jpg" alt="更多片子" loading="lazy" decoding="async">
+    <div class="tag">网盘 · 完整归档</div>
+    <div class="idx">08</div>
+    <div class="cap"><h3>更多片子</h3>
+      <div class="desc">院线与网络电影全域物料，含未公开项目的转发版。</div>
+      <div class="go">↗ 网盘 · 提取码 18nm</div></div>
+    <div class="plus">+</div>
+  </div>`;
 grid.appendChild(cta);
 
 /* ===== 弹层 ===== */
