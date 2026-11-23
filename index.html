@@ -68,7 +68,7 @@ a{color:inherit}
 .sect-head .side{font-size:12px;letter-spacing:.16em;color:var(--faint);text-align:right;line-height:2}
 
 /* ============ 作品 ============ */
-.works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .card{position:relative;cursor:pointer;background:#0e0f11;overflow:hidden;
   border:1px solid var(--line);transition:border-color .4s,transform .4s}
 .card:hover{border-color:rgba(201,160,99,.42);transform:translateY(-3px)}
@@ -195,9 +195,11 @@ footer{max-width:1280px;margin:0 auto;padding:0 48px 60px;display:flex;justify-c
 
 /* ============ 响应式 ============ */
 @media (max-width:1100px){
-  .works{grid-template-columns:repeat(2,1fr)}
   .cap4{grid-template-columns:1fr 1fr}
   .plate{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:1240px){
+  .works{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:960px){
   .bar{padding:12px 22px 10px;flex-direction:column;align-items:flex-start;gap:9px}
@@ -445,7 +447,11 @@ const WORKS = [
 
   { title:'《画皮：情灭》', tag:'抖音 · 上线物料', live:false,
     desc:'上线物料，艺人端发布，除预告外物料基本独立完成。',
-    type:'link', url:'https://v.douyin.com/_Bmbwtp1B84/', poster:'assets/05.jpg' }
+    type:'link', url:'https://v.douyin.com/_Bmbwtp1B84/', poster:'assets/05.jpg' },
+
+  { title:'《双生神捕之墙头马上》', tag:'爱奇艺 · 短剧预告', live:false,
+    desc:'24 集短剧的开播预告与竖版切片，爱奇艺独播。',
+    type:'link', url:'https://www.iqiyi.com/a_hqu4m0f4ap.html', poster:'assets/shuangshen.jpg' }
 ];
 
 const grid = document.getElementById('works-grid');
@@ -466,6 +472,16 @@ WORKS.forEach((w, i) => {
   el.addEventListener('click', () => openItem(w));
   grid.appendChild(el);
 });
+
+/* 最后一格：完整作品入口 */
+const cta = document.createElement('a');
+cta.className = 'card cta';
+cta.href = 'https://pan.baidu.com/s/1T1qk3eqYJMgS1CNigBzpZg?pwd=18nm';
+cta.target = '_blank'; cta.rel = 'noopener';
+cta.innerHTML = `<div class="n">+</div><h3>更多片子</h3>
+  <p>院线与网络电影全域物料，含未公开项目的转发版。</p>
+  <div class="arrow">网盘 · 提取码 18nm ↗</div>`;
+grid.appendChild(cta);
 
 /* ===== 弹层 ===== */
 const modal = document.getElementById('modal');
